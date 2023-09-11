@@ -27,6 +27,7 @@
     <script defer src="./draggables.js"></script>
     <script defer src="./clothes.js"></script>
     <script defer src="./modals.js"></script>
+    <script defer src="./undo-redo.js"></script>
 </head>
 
 <body>
@@ -42,10 +43,10 @@
                 restart_alt
             </span>
             <div class="undo-redo-wrapper" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="undo">
                     undo
                 </span>
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="redo">
                     redo
                 </span>
             </div>

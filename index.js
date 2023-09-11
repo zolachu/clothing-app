@@ -16,9 +16,12 @@ const restartModal = document.querySelector('.restart-modal');
 const goBackBtn = document.querySelector('.go-back');
 const nextArrowButton = document.querySelector('#next-arrow-btn');
 const downloadButton = document.querySelector('.download-btn');
+const undo = document.querySelector('#undo');
+const redo = document.querySelector('#redo');
 
 const themeColors = ['#fff', '#f4f4f4', '#FEF5EE', '#D2B48C', '#A9A9A9'];
 
+let level = 0;
 let isOnPrintPage = false;
 
 menu.forEach((item) => {
@@ -36,7 +39,6 @@ body.addEventListener('click', (e) => {
     e.target.classList.add('active');
   }
 });
-
 
 backgroundColors.forEach((colorItem, index) => {
   colorItem.style.backgroundColor = themeColors[index];
@@ -102,4 +104,6 @@ function addBackgroundColorToMomento(bgColor) {
   copyLastMoment.background = bgColor;
   momento.push(copyLastMoment);
   console.log(momento);
+  level++;
+  console.log(level);
 }

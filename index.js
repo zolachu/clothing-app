@@ -29,7 +29,6 @@ menu.forEach((item) => {
   });
 });
 
-
 body.addEventListener('click', (e) => {
   if (!e.target.classList.contains('draggable')) {
     loseFocus();
@@ -50,25 +49,43 @@ backgroundColors.forEach((colorItem, index) => {
   });
 });
 
-
 closeTabs.forEach((ct) => removeMenu(ct));
 removeMenu(overlay);
+
+/*
+ * nextArrowButton click event handler
+ * toggles the visibility of collage header and collage footer.
+ * Enables download button
+ */
+nextArrowButton.addEventListener('click', () => {
+  isOnPrintPage = !isOnPrintPage;
+  collageContainer.classList.toggle('visible');
+  toggleTouchability(isOnPrintPage);
+});
+
+/*
+ * add click event to downloadButton
+ * downloads a png image
+ */
+downloadButton.addEventListener('click', () => {
+  download();
+});
+
+/*
+ * helper function to enable/disable resizable and draggables.
+ * removes pointer events from products in case of 'enable'.
+ */
+function toggleTouchability(isOnPrintPage) {
+  let method = isOnPrintPage ? 'disable' : 'enable';
+  let pointerEvent = isOnPrintPage ? 'none' : 'auto';
+  $('.draggable').resizable(method);
+  $('.draggable').draggable(method);
+  $('.draggable').css('pointerEvents', pointerEvent);
+}
 
 function removeMenu(element) {
   element.addEventListener('click', () => {
     collageMenu.forEach((menu) => menu.classList.remove('active'));
     overlay.classList.remove('active');
-  })
+  });
 }
-
-nextArrowButton.addEventListener('click', () =>{  
-  isOnPrintPage = !isOnPrintPage;
-  console.log('lc')
-  collageContainer.classList.toggle('visible');
-  
-});
-
-downloadButton.addEventListener('click', () => { 
-    download();
-})
-

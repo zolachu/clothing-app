@@ -17,12 +17,12 @@ $(function () {
   $('.draggable').resizable({
     cursor: 'grabbing',
     start: (e, ui) => {
-      gainFocus(e); 
-      // $('.draggable:not(.active)').css('pointer-events', 'none');
+      gainFocus(e);
+      $('.draggable:not(.active)').css('pointer-events', 'none');
     },
-    stop: () => { 
+    stop: () => {
       console.log('adding auto');
-      // $('.draggable:not(.active)').css('pointer-events', 'auto');
+      $('.draggable:not(.active)').css('pointer-events', 'auto');
     },
     aspectRatio: true,
   });

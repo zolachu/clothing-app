@@ -37,6 +37,7 @@ body.addEventListener('click', (e) => {
   }
 });
 
+
 backgroundColors.forEach((colorItem, index) => {
   colorItem.style.backgroundColor = themeColors[index];
 

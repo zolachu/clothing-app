@@ -1,21 +1,18 @@
-$(function () { 
-  
-  $('.draggable').on('mousedown touchstart', function (e) {
-    $(this).css('cursor', 'grabbing');
-  });
+$(function () {
+  // $('.draggable').on('mousedown touchstart', function (e) {
+  //   $(this).css('cursor', 'grabbing');
+  // });
 
-  $('.draggable').on('mouseup touchend', function (e) {
-    $(this).css('cursor', 'grab');
-  });
+  // $('.draggable').on('mouseup touchend', function (e) {
+  //   $(this).css('cursor', 'grab');
+  // });
 
   $('.draggable').draggable({
     containment: '#collage-body',
-    cursor: 'grabbing',
     start: gainFocus,
   });
 
   $('.draggable').resizable({
-    cursor: 'grabbing',
     start: (e, ui) => {
       gainFocus(e);
       $('.draggable:not(.active)').css('pointer-events', 'none');

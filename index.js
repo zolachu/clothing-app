@@ -47,6 +47,7 @@ backgroundColors.forEach((colorItem, index) => {
     const color = colorItem.style.backgroundColor;
     collageBody.style.backgroundColor = color;
     themeColor.style.backgroundColor = color;
+    addBackgroundColorToMomento(themeColors[index]);
   });
 });
 
@@ -89,4 +90,16 @@ function removeMenu(element) {
     collageMenu.forEach((menu) => menu.classList.remove('active'));
     overlay.classList.remove('active');
   });
+}
+
+function addBackgroundColorToMomento(bgColor) {
+  let copyLastMoment = {};
+  if (momento.length > 0) {
+    let lastMoment = momento[momento.length - 1];
+    copyLastMoment = structuredClone(lastMoment);
+  }
+
+  copyLastMoment.background = bgColor;
+  momento.push(copyLastMoment);
+  console.log(momento);
 }

@@ -14,7 +14,7 @@ removeMenu(overlay);
 
 function removeMenu(element) {
   element.addEventListener('click', () => {
-    collagePopups.forEach((popup) => popup.classList.remove('active'));
+    collageMenu.forEach((popup) => popup.classList.remove('active'));
     overlay.classList.remove('active');
   })
 }

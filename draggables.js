@@ -17,8 +17,8 @@ $(function () {
       gainFocus(e);
       $('.draggable:not(.active)').css('pointer-events', 'none');
     },
-    stop: () => {
-      console.log('adding auto');
+    stop: function (e, ui) {
+      addResizableToMomento(e, ui);
       $('.draggable:not(.active)').css('pointer-events', 'auto');
     },
     aspectRatio: true,
@@ -40,3 +40,22 @@ function gainFocus(e) {
 function loseFocus() {
   $('.draggable').removeClass('active');
 }
+
+function addResizableToMomento(e, ui) {
+  let copyLastMoment = {};
+  if (momento.length > 0) {
+    let lastMoment = momento[momento.length - 1];
+    copyLastMoment = structuredClone(lastMoment);
+  }
+
+  for (let i in copyLastMoment.products) {
+    let product = copyLastMoment.products[i];
+    if (product.name === e.target.id) {
+      const size = [ui.size.width, ui.size.height];
+      product.size = size;
+    }
+  }
+
+  momento.push(copyLastMoment);
+}
+

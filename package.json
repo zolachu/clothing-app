@@ -1,0 +1,19 @@
+{
+  "name": "clothes_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mdi/font": "^7.2.96",
+    "axios": "^1.5.0",
+    "dom-to-image": "^2.6.0",
+    "jquery": "^3.7.1",
+    "jquery-ui": "^1.13.2"
+  }
+}

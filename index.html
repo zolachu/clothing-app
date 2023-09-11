@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha256-c9vxcXyAG4paArQG3xk6DjyW/9aHxai2ef9RpMWO44A=" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script defer src="./index.js"></script>
+    <script defer src="./download.js"> </script>
+    <script defer src="./draggables.js"></script>
+    <script defer src="./clothes.js"></script>
+    <script defer src="./modals.js"></script>
+    <script defer src="./momento.js"></script>
+
+</head>
+
+<body>
+    <div class="collage-container">
+        <div class="collage-overlay"></div>
+        <div class="restart-modal">
+            <p>Reset your image?</p>
+            <button class="reset">Reset</button>
+            <button class="go-back">Go back</button>
+        </div>
+        <div class="collage-header " style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;">
+            <span class="material-symbols-outlined mdi" id="restart-btn">
+                restart_alt
+            </span>
+            <div class="undo-redo-wrapper" style="font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                <span class="material-symbols-outlined">
+                    undo
+                </span>
+                <span class="material-symbols-outlined">
+                    redo
+                </span>
+            </div>
+            <div id="next-arrow-btn">
+                <span class="material-symbols-outlined next-btn icon">
+                    arrow_circle_right
+                </span>
+                <div class="back-btn">
+                    <span class="material-symbols-outlined icon">
+                        keyboard_backspace
+                    </span>
+                    <span>Go back</span>
+                </div>
+
+            </div>
+
+        </div>
+        <h6 class="message">Your look is ready!</h6>
+
+        <div class="collage-body" id="collage-body">
+
+            <div id="draggable" class="ui-widget-content draggable grab">
+                <img id="test">
+            </div>
+            <div class="draggable grab">
+                <img id="test2" class="ui-widget-content">
+            </div>
+        </div>
+
+        <div class="collage-footer visible" style="font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 90;">
+            <div class="category-wrapper">
+                <span class="theme" data-tab-content="#background">
+                    <span class="material-symbols-outlined mdi">
+                        check_box_outline_blank
+                    </span>
+                    <span id="theme-color"></span>
+                </span>
+                <span class="description">Background</span>
+            </div>
+            <div class="category-wrapper">
+                <span class="material-symbols-outlined mdi" data-tab-content="#clothes">
+                    checkroom
+                </span>
+                <span class="description">Item</span>
+            </div>
+            <div class="category-wrapper">
+                <span class="material-symbols-outlined mdi" data-tab-content="#text">
+                    match_case
+                </span>
+                <span class="description">Text</span>
+            </div>
+        </div>
+
+        <button class="download-btn">
+            <span class="material-symbols-outlined">
+                download
+            </span>
+
+        </button>
+
+    </div>
+    <div class="modal-container">
+        <div class="overlay"></div>
+        <div class="collage-menu background-menu" id="background">
+            <div class="background-color color1 active"></div>
+            <div class="background-color color2"></div>
+            <div class="background-color color3"></div>
+            <div class="background-color color4"></div>
+            <div class="background-color color5"></div>
+            <span class="material-symbols-outlined close-tab">
+                close
+            </span>
+        </div>
+        <div class="collage-menu item-menu" id="clothes">
+            clothes
+        </div>
+        <div class="collage-menu text-menu" id="text">
+            <span class="material-symbols-outlined close-tab">
+                close
+            </span>
+            text
+        </div>
+    </div>
+</body>
+
+</html>

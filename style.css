@@ -110,7 +110,7 @@ body {
     font-size: 12px;
     background-color: transparent;
     cursor: pointer;
-} 
+}
 
 /* .visible .draggable {
     transition: all 1s;
@@ -141,7 +141,7 @@ body {
 }
 
 .visible .message {
-    display:  block;
+    display: block;
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
@@ -176,7 +176,7 @@ body {
     display: none;
 }
 
-.visible #next-arrow-btn .next-btn{
+.visible #next-arrow-btn .next-btn {
     display: none;
 }
 
@@ -350,8 +350,9 @@ body {
 
 .draggable {
     height: 300px;
+    width: auto;
     min-height: 30px;
-    min-width: 30px;
+    /* min-width: 30px; */
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: transparent !important;
@@ -391,10 +392,11 @@ body {
 }
 
 .draggable img {
-    height: 95%;
-    width: 95%;
+    height: 100%;
+    /* width: 95%; */
     pointer-events: none;
 }
+
 .ui-widget-content {
     /* height: inherit;
     width: inherit; */
@@ -402,7 +404,7 @@ body {
     background-color: transparent;
 }
 
-.download-btn { 
+.download-btn {
     display: none;
     position: absolute;
     bottom: 25px;
@@ -413,7 +415,7 @@ body {
     outline: none;
     border: none;
     padding: 1.1rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 

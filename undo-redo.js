@@ -22,12 +22,14 @@ undo.addEventListener('click', () => {
   //   });
   for (let i in currentMoment.products) {
     let product = currentMoment.products[i];
+    console.log(product.name);
     // console.log(document.querySelectorAll('.ui-widget-content')[i].);
-    document.querySelectorAll('.draggable')[i].style.height =
-      product.size[1] + 'px';
+    document.getElementById(product.name).style.height = product.size[1] + 'px';
     console.log(product.size);
-    // document.querySelectorAll('.draggable')[i].style.height =
-    //   product.size[1] + 'px';
+    const ratio = product.size[0];
+    document.getElementById(product.name).style.width =
+      product.size[1] * ratio + 'px';
+    
   }
   let color = currentMoment.background;
   collageBody.style.backgroundColor = color;

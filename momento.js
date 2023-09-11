@@ -9,15 +9,22 @@ let momento = [];
 // ];
 let initProducts = [];
 let initBackground = 'white';
-
-[...document.querySelectorAll('.draggable')].forEach((element) => {
-  console.log('1');
-  initProducts.push({
-    name: element.id,
-    position: [0, 0],
-    size: [element.offsetWidth, element.offsetHeight],
+// $(function () {
+  [...document.querySelectorAll('.draggable')].forEach((element) => {
+    const image = element.querySelector('img');
+    console.log(element.offsetHeight);
+//TODO: find height and width of element!!
+    initProducts.push({
+      name: element.id,
+      position: [0, 0],
+      size: [image.naturalWidth /image.naturalHeight, element.offsetHeight],
+    });
   });
-});
-momento.push({ products: initProducts, background: initBackground });
 
-console.log(momento);
+  momento.push({ products: initProducts, background: initBackground });
+
+  console.log(momento);
+// });
+
+
+

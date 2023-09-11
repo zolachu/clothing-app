@@ -51,13 +51,8 @@ function addResizableToMomento(e, ui) {
   for (let i in copyLastMoment.products) {
     let product = copyLastMoment.products[i];
     if (product.name === e.target.id) {
-      const ratio =
-        (ui.size.width - ui.originalSize.width) /
-        (ui.size.height - ui.originalSize.height);
-      const size = [
-        ui.size.width - ui.originalSize.width,
-        ui.size.height - ui.originalSize.height,
-      ];
+      const ratio = ui.size.width / ui.size.height;
+      const size = [ratio, ui.size.height];
       product.size = size;
     }
   }

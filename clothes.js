@@ -14,16 +14,17 @@ const options = {
 (async () => {
   try {
     for (i = 0; i < 2; i++) {
-      const response = await fetch(urls[i], options);
-      const result = await response.blob();
-      const objectURL = URL.createObjectURL(result);
+      // const response = await fetch(urls[i], options);
+      // const result = await response.blob();
+      // const objectURL = URL.createObjectURL(result);
       let myImage;
       if (i === 0) {
         myImage = document.querySelector('#test');
       } else {
         myImage = document.querySelector('#test2');
       }
-      myImage.src = objectURL;
+      // myImage.src = objectURL;
+      myImage.src = urls[i];
     }
   } catch (error) {
     console.error(error);

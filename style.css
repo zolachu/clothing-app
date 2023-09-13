@@ -348,11 +348,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.draggable {
+/* .draggable {
     height: 300px;
     width: auto;
     min-height: 30px;
-    /* min-width: 30px; */
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: transparent !important;
@@ -380,7 +379,6 @@ body {
 }
 
 .draggable .ui-icon {
-    /* position: absolute; */
     background: var(--border-color);
     height: 20px;
     width: 20px;
@@ -393,8 +391,61 @@ body {
 
 .draggable img {
     height: 100%;
-    /* width: 95%; */
     pointer-events: none;
+} */
+
+.draggable {
+    z-index: 9;
+    height: 300px;
+    /* width: 50px; */
+    position: fixed;
+}
+
+.draggable img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.resizer {
+    position: absolute;
+    z-index: 11;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.ne {
+    bottom: -5px;
+    right: -5px;
+    position: absolute;
+}
+
+.ne::before {
+    content: '^';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 8px;
+}
+
+.sw {
+    top: -5px;
+    left: -5px;
+    position: absolute;
+}
+
+.sw::before {
+    content: 'x';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 8px;
 }
 
 .ui-widget-content {

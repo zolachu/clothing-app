@@ -1,46 +1,3 @@
-$(function () {
-  // $('.draggable').on('mousedown touchstart', function (e) {
-  //   $(this).css('cursor', 'grabbing');
-  // });
-
-  // $('.draggable').on('mouseup touchend', function (e) {
-  //   $(this).css('cursor', 'grab');
-  // });
-
-  $('.draggable').draggable({
-    containment: '#collage-body',
-    start: gainFocus,
-  });
-
-  $('.draggable').resizable({
-    start: (e, ui) => {
-      gainFocus(e);
-      $('.draggable:not(.active)').css('pointer-events', 'none');
-    },
-    stop: function (e, ui) {
-      addResizableToMomento(e, ui);
-      $('.draggable:not(.active)').css('pointer-events', 'auto');
-    },
-    aspectRatio: true,
-  });
-
-  $('.draggable').on('click', (e) => {
-    gainFocus(e);
-  });
-});
-
-function gainFocus(e) {
-  $('.draggable').removeClass('active');
-  $(e.target).addClass('active');
-  // pop up the target to the top of the screen
-  e.target.remove();
-  $('.collage-body').append(e.target);
-}
-
-function loseFocus() {
-  $('.draggable').removeClass('active');
-}
-
 function addResizableToMomento(e, ui) {
   let copyLastMoment = {};
   if (momento.length > 0) {
@@ -61,4 +18,64 @@ function addResizableToMomento(e, ui) {
   level++;
 }
 
+const el = document.querySelector('.draggable');
+const ne = document.querySelector('.ne');
+const img = document.querySelector('img');
 
+el.addEventListener('mousedown', mousedown);
+
+// if (getEventListeners(el).contains('mousedown')) {
+
+// }
+ne.addEventListener('mousedown', mousedownResize);
+function mousedown(e) {
+  console.log('nooo');
+  e.preventDefault();
+  prevX = e.clientX;
+  prevY = e.clientY;
+
+  window.addEventListener('mousemove', mousemove);
+  window.addEventListener('mouseup', mouseup);
+
+  let rect = el.getBoundingClientRect();
+
+  function mousemove(e) {
+    let newX = prevX - e.clientX;
+    let newY = prevY - e.clientY;
+
+    el.style.top = rect.top - newY + 'px';
+    el.style.left = rect.left - newX + 'px';
+  }
+
+  function mouseup(e) {
+    window.removeEventListener('mousemove', mousemove);
+    window.removeEventListener('mouseup', mouseup);
+  }
+}
+
+let currentResizer;
+function mousedownResize(e) {
+  e.preventDefault();
+  prevX = e.clientX;
+  prevY = e.clientY;
+  currentResizer = e.target;
+  window.addEventListener('mousemove', mousemove);
+  window.addEventListener('mouseup', mouseup);
+
+  function mousemove(e) {
+    let newX = prevX - e.clientX;
+    let newY = prevY - e.clientY;
+    let rect = el.getBoundingClientRect();
+    el.style.width = rect.width - newX + 'px';
+    el.style.height = rect.height - newY + 'px';
+
+    console.log(el.style.width, rect.width);
+    prevX = e.clientX;
+    prevY = e.clientY;
+  }
+
+  function mouseup(e) {
+    window.removeEventListener('mousemove', mousemove);
+    window.removeEventListener('mouseup', mouseup);
+  }
+}

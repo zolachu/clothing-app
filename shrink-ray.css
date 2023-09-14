@@ -1,6 +1,7 @@
 .shrink-ray {
-    --tilt-degree: -40;
-    --tilt-degree2: 2* calc(90 - var(--tilt-degree));
+    --tilt-degree: -10;
+    --tilt-degree-2: 2* calc(90 - var(--tilt-degree));
+    --tilt-degree-3: calc(90 - var(--tilt-degree));
     height: 80vh;
     width: 30vw;
     position: fixed;
@@ -71,7 +72,7 @@
     width: 20px;
     height: 30vh;
     background-color: #A8C2C6;
-    transform: rotate(calc(var(--tilt-degree2) * 1deg));
+    transform: rotate(calc(var(--tilt-degree-2) * 1deg));
     /* transform: rotate(120deg); */
     transform-origin: top center;
     border-radius: 5px;
@@ -142,7 +143,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 100%) rotate(90 - var(--tilt-degree));
+    transform: translate(-50%, 100%) rotate(calc((180 - var(--tilt-degree-3)) * 1deg));
 }
 
 .shrink-ray .stand-3 .top-pipe {
@@ -166,20 +167,80 @@
     left: 5px;
 }
 
+.shrink-ray .stand-3 .top-gray-round {
+    position: absolute;
+    background-color: #3C4353;
+    border: 2px solid black;
+    height: 100px;
+    width: 50px;
+    top: 25px;
+    transform: translateX(-30%);
+    border-radius: 0 35px 35px 0;
+    overflow: hidden;
+}
+
+.shrink-ray .top-round-crown {
+    position: absolute;
+    height: 100px;
+    width: 20px;
+    left: -10px;
+    background: #3A4653;
+    top: 25px;
+    transform: translateX(-40%);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shrink-ray .top-gray-round::before {
+    content: '';
+    position: absolute;
+    /* left: 20px; */
+    background-color: #69758E;
+    border-width: 10px;
+    height: 100px;
+    width: 50px;
+    top: 15px;
+    border-radius: 0 35px 35px 0;
+}
+
+.shrink-ray .top-gray-round::after {
+    content: '';
+    position: absolute;
+    /* left: 20px; */
+    background-color: #4D5C63;
+    height: 80px;
+    width: 56px;
+    top: 21px;
+    left: -18px;
+    border-radius: 50%;
+    transform: rotate(80deg);
+}
+
+.shrink-ray .bolt {
+    border: 2px solid black;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+
 @keyframes shrink-ray-animation {
-    0% {
+    from {
         --tilt-degree: 30%;
     }
 
-    30% {
+    /* 30% {
         --tilt-degree: 40%;
     }
 
     60% {
         --tilt-degree: 20%;
-    }
+    } */
 
-    100% {
+    to {
         --tilt-degree: 0%;
     }
 }

@@ -227,6 +227,123 @@
 }
 
 
+.shrink-ray .light-container {
+    height: 100%;
+    /* width: 10px; */
+    position: absolute;
+    top: 0;
+    left: -2px;
+    /* transform: rotate(90deg); */
+    display: flex;
+    align-items: center;
+    transform-origin: top left;
+    transform: scale(-1, 1);
+}
+
+.light-container .light1 {
+    height: 50%;
+    width: 10px;
+    background-color: #D5F3A0;
+    box-shadow: 0 0px 20px #D5F3A0;
+    position: relative;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    overflow: hidden;
+}
+
+.light-container .light1::after {
+    content: '';
+    position: absolute;
+    height: 30%;
+    bottom: 5px;
+    width: 10px;
+    background-color: #76FC6E;
+    box-shadow: 0 0px 20px #D5F3A0;
+
+}
+
+.light-container .box1 {
+    background-color: #fff;
+    height: 40px;
+    width: 10px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.light-container .box2 {
+    background-color: #fff;
+    height: 45px;
+    width: 7px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.light-container .box3 {
+    background-color: #fff;
+    height: 35px;
+    width: 3px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.light-container .box4 {
+    background-color: #fff;
+    height: 42px;
+    width: 5px;
+    border: 1px solid black;
+
+    border-radius: 2px;
+}
+
+
+.light-container .box5 {
+    background-color: #fff;
+    height: 30px;
+    width: 3px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.light-container .box6 {
+    background-color: #fff;
+    height: 35px;
+    width: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.light-container .box7 {
+    background-color: #fff;
+    height: 10px;
+    width: 3px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.light-container .box8 {
+    background-color: #fff;
+    height: 8px;
+    width: 3px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.light-container .box9 {
+    background-color: #fff;
+    height: 5px;
+    width: 3px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
 @keyframes shrink-ray-animation {
     from {
         --tilt-degree: 30%;

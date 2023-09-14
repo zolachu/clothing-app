@@ -1,0 +1,185 @@
+.shrink-ray {
+    --tilt-degree: -40;
+    --tilt-degree2: 2* calc(90 - var(--tilt-degree));
+    height: 80vh;
+    width: 30vw;
+    position: fixed;
+    bottom: 0;
+    left: 200px;
+    /* animation: shrink-ray-animation 2s ease-in-out infinite; */
+    /* transform: scale(-1); */
+}
+
+.shrink-ray .stand {
+    height: 100%;
+    width: 100%;
+}
+
+.shrink-ray .stand .stand-1 {
+    box-sizing: content-box;
+    border: 2px solid black;
+    width: 20px;
+    height: 30vh;
+    background-color: #A8C2C6;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(calc(var(--tilt-degree) * 1deg));
+    transform-origin: bottom;
+}
+
+.shrink-ray .stand .stand-1::before {
+    content: '';
+    position: absolute;
+    height: 30vh;
+    width: 5px;
+    left: 10px;
+    background-color: #D5E9ED;
+}
+
+.shrink-ray .stand-1 .stand-circle {
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    background-color: #5D686E;
+    border: 2px solid black;
+    height: 40px;
+    width: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shrink-ray .stand-1 .stand-circle::before {
+    position: absolute;
+
+    content: '';
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 20px;
+    width: 20px;
+    background-color: #A8B2C2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.shrink-ray .stand .stand-2 {
+    box-sizing: content-box;
+    border: 2px solid black;
+    z-index: -5;
+    position: absolute;
+    width: 20px;
+    height: 30vh;
+    background-color: #A8C2C6;
+    transform: rotate(calc(var(--tilt-degree2) * 1deg));
+    /* transform: rotate(120deg); */
+    transform-origin: top center;
+    border-radius: 5px;
+}
+
+.shrink-ray .stand .stand-2::before {
+    content: '';
+    position: absolute;
+    height: 30vh;
+    width: 5px;
+    right: 10px;
+    background-color: #D5E9ED;
+}
+
+
+
+.stand-1 .stand-pipe {
+    content: '';
+    height: 10vh;
+    width: 150%;
+    background-color: #8390A0;
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.shrink-ray .stand-3 {
+    position: absolute;
+    z-index: -6;
+    background: #A8C2C6;
+    border-radius: 0 0 2px 2px;
+    width: 10px;
+    height: 10vh;
+    bottom: -2px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    border: 2px solid black;
+}
+
+.shrink-ray .stand-3 .top-circle {
+    position: absolute;
+    width: 22px;
+    height: 10px;
+    border-radius: 11px 11px 0 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background-color: #5F6E73;
+    bottom: 0;
+    border: 2px solid black;
+    border-bottom: 0;
+    overflow: hidden;
+
+}
+
+.shrink-ray .stand-3 .top-circle::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: #86929B;
+    left: 2px;
+}
+
+.shrink-ray .bulb {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%) rotate(90 - var(--tilt-degree));
+}
+
+.shrink-ray .stand-3 .top-pipe {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    left: 50%;
+    bottom: -10px;
+    transform: translate(-50%, 100%);
+    background-color: #5F6E73;
+    border: 2px solid black;
+}
+
+
+.shrink-ray .stand-3 .top-pipe::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background-color: #86929B;
+    left: 5px;
+}
+
+@keyframes shrink-ray-animation {
+    0% {
+        --tilt-degree: 30%;
+    }
+
+    30% {
+        --tilt-degree: 40%;
+    }
+
+    60% {
+        --tilt-degree: 20%;
+    }
+
+    100% {
+        --tilt-degree: 0%;
+    }
+}

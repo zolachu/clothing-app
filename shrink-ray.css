@@ -115,6 +115,14 @@
     border: 2px solid black;
 }
 
+.shrink-ray .bulb-body {
+    position: absolute;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    top: 25px;
+}
+
 .shrink-ray .stand-3 .top-circle {
     position: absolute;
     width: 22px;
@@ -127,7 +135,6 @@
     border: 2px solid black;
     border-bottom: 0;
     overflow: hidden;
-
 }
 
 .shrink-ray .stand-3 .top-circle::before {
@@ -137,6 +144,14 @@
     width: 5px;
     background-color: #86929B;
     left: 2px;
+}
+
+.shrink-ray .top-circle-hat {
+    height: 10px;
+    width: 5px;
+    background: red;
+    right: -35px;
+    position: absolute;
 }
 
 .shrink-ray .bulb {
@@ -173,7 +188,6 @@
     border: 2px solid black;
     height: 100px;
     width: 50px;
-    top: 25px;
     transform: translateX(-30%);
     border-radius: 0 35px 35px 0;
     overflow: hidden;
@@ -185,7 +199,6 @@
     width: 20px;
     left: -10px;
     background: #3A4653;
-    top: 25px;
     transform: translateX(-40%);
     border: 2px solid black;
     display: flex;
@@ -264,8 +277,8 @@
 }
 
 .light-container .box1 {
-    background-color: #fff;
-    height: 40px;
+    background-color: #E0FBC2;
+    height: 35px;
     width: 10px;
     border-right: 1px solid black;
     border-top: 1px solid black;
@@ -273,76 +286,115 @@
 }
 
 .light-container .box2 {
-    background-color: #fff;
-    height: 45px;
+    background-color: #E0FBC2;
+    height: 43px;
     width: 7px;
     border: 1px solid black;
     border-radius: 2px;
+    position: relative;
+    right: 1px;
 }
 
 .light-container .box3 {
-    background-color: #fff;
-    height: 35px;
+    background-color: #E0FBC2;
+    height: 33px;
     width: 3px;
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
+    right: 1px;
 }
 
 .light-container .box4 {
-    background-color: #fff;
-    height: 42px;
+    background-color: #E0FBC2;
+    height: 40px;
     width: 5px;
     border: 1px solid black;
-
+    position: relative;
+    right: 2px;
     border-radius: 2px;
 }
 
 
 .light-container .box5 {
-    background-color: #fff;
-    height: 30px;
+    background-color: #E0FBC2;
+    height: 27px;
     width: 3px;
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
+    right: 2px;
 }
 
 .light-container .box6 {
-    background-color: #fff;
-    height: 35px;
+    background-color: #E0FBC2;
+    height: 33px;
     width: 5px;
     border: 1px solid black;
     border-radius: 2px;
+    position: relative;
+    right: 3px;
 }
 
 .light-container .box7 {
-    background-color: #fff;
+    background-color: #E0FBC2;
     height: 10px;
     width: 3px;
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
+    right: 3px;
 }
 
 .light-container .box8 {
-    background-color: #fff;
+    background-color: #E0FBC2;
     height: 8px;
-    width: 3px;
+    width: 7px;
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
+    right: 3px;
 }
 
 .light-container .box9 {
-    background-color: #fff;
-    height: 5px;
-    width: 3px;
+    background-color: #E0FBC2;
+    height: 7px;
+    width: 7px;
     border-right: 1px solid black;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    position: relative;
+    right: 3px;
 }
 
+.light-container .box10 {
+    background-color: #E0FBC2;
+    height: 3px;
+    width: 10px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    position: relative;
+    right: 3px;
+}
+
+.light-container .box11 {
+    background-color: #5F6E73;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    border: 1px solid black;
+    position: relative;
+    right: 4px;
+}
+
+.light-container .box {
+    box-shadow: 0 0 10px #E0FBC2;
+}
 
 @keyframes shrink-ray-animation {
     from {

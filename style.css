@@ -31,6 +31,7 @@ body {
     position: relative;
 }
 
+
 .collage-overlay {
     position: absolute;
     z-index: 3000;
@@ -63,7 +64,7 @@ body {
 
 .restart-modal {
     /* TODO: animated blob portal */
-
+    z-index: 3002;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -77,14 +78,24 @@ body {
     position: fixed;
     text-align: center;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     width: 70vw;
     height: 70vh;
-    z-index: 3001;
+    animation: bounce 3s ease-in-out alternate infinite;
+}
 
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(20px);
+    }
 }
 
 .restart-modal img {
+    z-index: 3001;
     position: absolute;
     animation: rotating 80s linear infinite;
     height: 100%;
@@ -112,6 +123,7 @@ body {
 }
 
 .restart-modal .reset {
+    z-index: 3002;
     background-color: #000;
     padding: 10px;
     outline: 0;
@@ -125,6 +137,7 @@ body {
 }
 
 .restart-modal .go-back {
+    z-index: 3002;
     border: 0;
     outline: 0;
     text-decoration: underline;
@@ -132,6 +145,10 @@ body {
     font-size: 12px;
     background-color: transparent;
     cursor: var(--cursor-hand-url);
+}
+
+.restart-modal p {
+    z-index: 3002;
 }
 
 /* .visible .draggable {
@@ -313,17 +330,35 @@ body {
     left: 50%;
     width: var(--container-width);
     z-index: 1501;
-    background-color: #fff;
-    min-height: 100px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 30px 30px 0 0;
+    background-image: url('./assets/Untitled-Artwork.png');
+    background-size: cover;
+    min-height: 200px;
+    /* box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1); */
+    /* border-radius: 30px 30px 0 0; */
     transform: scaleY(0) translateX(-50%);
     transform-origin: bottom center;
     transition: all 0.2s;
 }
 
+@keyframes animation--collage-menu {
+    0% {
+        transform: translateX(-50%) scaleY(0);
+
+    }
+
+    90% {
+        transform: translateX(-50%) scaleY(1.2);
+
+    }
+
+    100% {
+        transform: translateX(-50%) scaleY(1);
+    }
+}
+
 .collage-menu.active {
     transform: scaleY(1) translateX(-50%);
+    /* animation: animation--collage-menu 2s linear; */
 }
 
 .close-tab {

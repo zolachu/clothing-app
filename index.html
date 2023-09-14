@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./closet-style.css">
     <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
         crossorigin="anonymous"></script>
@@ -32,14 +33,50 @@
 </head>
 
 <body>
+    <div class="shrink-ray">
+        <div class="stand">
+            <div class="stand-1"></div>
+            <div class="stand-2"></div>
+            <div class="stand-circle"></div>
+        </div>
+    </div>
     <div class="collage-container">
+        <div class="wall">
+            <div class="frame">
+                <div class="frame__diagonal frame-left"></div>
+                <div class="frame__diagonal frame-right"></div>
+                <div class="frame__diagonal frame-left-bottom"></div>
+                <div class="frame__diagonal frame-right-bottom"></div>
+            </div>
+            <div class="inner-wall">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+                <div class="line line4"></div>
+                <div class="hr-line line5"></div>
+                <div class="hr-line line6"></div>
+                <div class="hr-line line7"></div>
+                <div class="line line8"></div>
+                <div class="line line9"></div>
+                <div class="line line10"></div>
+                <div class="line line11"></div>
+                <div class="line line12"></div>
+                <div class="line line13"></div>
+                <div class="line line14"></div>
+                <div class="line line15"></div>
+                <div class="line line16"></div>
+                <div class="line line17"></div>
+                <div class="line line18"></div>
+                <div class="line line19"></div>
+                <div class="line line20"></div>
+            </div>
+        </div>
         <div class="collage-overlay"></div>
         <div class="restart-modal">
-            
+            <img src="./assets/portal.png">
             <p>Reset your image?</p>
             <button class="reset">Reset</button>
             <button class="go-back">Go back</button>
-            <img src="./assets/portal.png">
         </div>
         <div class="collage-header " style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 48;">
             <span class="material-symbols-outlined mdi" id="restart-btn">
@@ -63,7 +100,6 @@
                     </span>
                     <span>Go back</span>
                 </div>
-
             </div>
 
         </div>
@@ -77,8 +113,8 @@
                 <!-- <div class="resizer nw"></div>
                 
                 <div class="resizer se"></div> -->
-                </div>
-                <!-- <div id="test-div1" class="draggable grab">
+            </div>
+            <!-- <div id="test-div1" class="draggable grab">
                 <img id="test" class="ui-widget-content">
             </div>
             <div id="test-div2" class="draggable grab">
@@ -96,7 +132,7 @@
                     <span class="material-symbols-outlined mdi">
                         check_box_outline_blank
                     </span>
-    <!-- <span id="theme-color"></span> -->
+                    <!-- <span id="theme-color"></span> -->
                 </span>
                 <span class="description">Background</span>
             </div>

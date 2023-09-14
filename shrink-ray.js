@@ -6,5 +6,5 @@ shrinkRayEl.addEventListener('click', (e) => {
   const deg = getComputedStyle(shrinkRayEl).getPropertyValue('--tilt-degree');
   console.log(deg);
   const deg2 = 20 - deg;
-  shrinkRayEl.style.setProperty('--tilt-degree', `${deg2}`);
+  //   shrinkRayEl.style.setProperty('--tilt-degree', `${deg2}`);
 });

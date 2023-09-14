@@ -87,8 +87,6 @@
     background-color: #D5E9ED;
 }
 
-
-
 .stand-1 .stand-pipe {
     content: '';
     height: 10vh;
@@ -157,20 +155,8 @@
     height: 0;
     width: 35px;
     transform: translateY(-50%) rotate(90deg);
-    overflow: hidden;
 }
 
-.top-circle-hat::before {
-    content: '';
-    position: absolute;
-    border: 2px solid black;
-    height: 40px;
-    width: 40px;
-    transform: rotate(60deg) skewX(30deg);
-    z-index: 3;
-    top: 7px;
-    left: -8px;
-}
 
 .shrink-ray .bulb {
     position: absolute;

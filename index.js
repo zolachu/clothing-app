@@ -107,3 +107,7 @@ function addBackgroundColorToMomento(bgColor) {
   level++;
   console.log(level);
 }
+
+function loseFocus() {
+  $('.draggable').removeClass('active');
+}

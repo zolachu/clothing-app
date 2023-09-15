@@ -5,6 +5,7 @@ body {
 }
 
 .glass-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +49,7 @@ body {
     overflow: hidden;
 }
 
+
 .glass-container .glass-bottleneck::before {
     width: 52px;
     height: 30px;
@@ -74,6 +76,38 @@ body {
     transform: scaleX(1.1);
 }
 
+
+.temp {
+    position: relative;
+    bottom: 18px;
+    height: 98px;
+    width: 98px;
+    border: 2px solid black;
+    border-radius: 5px 5px 5px 90%;
+    background-color: #bed5d6;
+    z-index: -2;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 8px 12px 12px;
+}
+
+.glass-liquid {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px 5px 5px 90%;
+    background-color: #F8C428;
+    z-index: -3;
+}
+
+.glass-liquid::before {
+    position: absolute;
+
+}
+
+
 .glass-container .glass-bottle-bottom::before {
     content: '';
     width: 0;
@@ -87,41 +121,6 @@ body {
     transform: translateX(-50%) scale(0.95);
 }
 
-/* 
-.glass-container .glass-bottle-bottom::after {
-    content: '';
-    height: 50px;
-    width: 100px;
-    border-radius: 50%;
-    border: 2px solid black;
-    position: absolute;
-    bottom: 0;
-} */
-
-.glass-container .glass-liquid {
-    width: 0;
-    position: absolute;
-    border-bottom: solid 140px #E87528;
-    border-right: solid 70px transparent;
-    border-left: solid 70px transparent;
-    border-radius: 50%;
-    z-index: 2;
-    top: 6px;
-    transform: translateX(-50%) scale(0.80);
-    display: flex;
-    justify-content: center;
-}
-
-.glass-container .glass-liquid--mask {
-    position: absolute;
-    height: 12px;
-    width: 33px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
-    top: 30px;
-    border: 2px solid #FFBB5F;
-    z-index: 3;
-}
 
 .glass-container .bubble1, .glass-container .bubble3 {
     border-radius: 50%;
@@ -156,9 +155,8 @@ body {
     height: 50px;
     width: 6px;
     border-radius: 3px;
-    transform: rotate(-28deg);
-    top: 63px;
-    left: 126px;
+    bottom: 3px;
+    right: 3px;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.7);
 }

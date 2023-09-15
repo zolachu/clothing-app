@@ -16,9 +16,12 @@ const restartModal = document.querySelector('.restart-modal');
 const goBackBtn = document.querySelector('.go-back');
 const nextArrowButton = document.querySelector('#next-arrow-btn');
 const downloadButton = document.querySelector('.download-btn');
+const undo = document.querySelector('#undo');
+const redo = document.querySelector('#redo');
 
 const themeColors = ['#fff', '#f4f4f4', '#FEF5EE', '#D2B48C', '#A9A9A9'];
 
+let level = 0;
 let isOnPrintPage = false;
 
 menu.forEach((item) => {
@@ -37,7 +40,6 @@ body.addEventListener('click', (e) => {
   }
 });
 
-
 backgroundColors.forEach((colorItem, index) => {
   colorItem.style.backgroundColor = themeColors[index];
 
@@ -47,6 +49,7 @@ backgroundColors.forEach((colorItem, index) => {
     const color = colorItem.style.backgroundColor;
     collageBody.style.backgroundColor = color;
     themeColor.style.backgroundColor = color;
+    addBackgroundColorToMomento(themeColors[index]);
   });
 });
 
@@ -89,4 +92,22 @@ function removeMenu(element) {
     collageMenu.forEach((menu) => menu.classList.remove('active'));
     overlay.classList.remove('active');
   });
+}
+
+function addBackgroundColorToMomento(bgColor) {
+  let copyLastMoment = {};
+  if (momento.length > 0) {
+    let lastMoment = momento[momento.length - 1];
+    copyLastMoment = structuredClone(lastMoment);
+  }
+
+  copyLastMoment.background = bgColor;
+  momento.push(copyLastMoment);
+  console.log(momento);
+  level++;
+  console.log(level);
+}
+
+function loseFocus() {
+  $('.draggable').removeClass('active');
 }

@@ -1,45 +1,27 @@
-// const urls = ['https://www.uniqlo.com/jp/ja/contents/feature/lifewear-collection/common_23fw/img/collage/productSub/productSub_460711_30.png',
-// 'https://www.uniqlo.com/jp/ja/contents/feature/lifewear-collection/common_23fw/img/collage/productSub/productSub_460914_12.png']
-
-const urls = [
-  './assets/product1.png',
-  './assets/product2.png',
-  './assets/product3.png',
-];
-const url =
-  'https://www.uniqlo.com/jp/ja/contents/feature/lifewear-collection/common_23fw/img/collage/productSub/productSub_460914_12.png';
+const url = './assets/gun-1.svg';
 const options = {
   method: 'GET',
   headers: {
-    // 'Content-Type': 'application/json',
+    'Content-Type': 'application/json',
   },
 };
+const urls = [];
+const images = document.querySelectorAll('.draggable img');
+
+[...images].forEach((draggableImage, index) => {
+  draggableImage.src = `./assets/gun-${index + 1}.svg`;
+});
 
 (async () => {
   try {
-    for (i = 0; i < 3; i++) {
-      // const response = await fetch(urls[i], options);
-      // const result = await response.blob();
-      // const objectURL = URL.createObjectURL(result);
-      let myImage;
-      if (i === 0) {
-        myImage = document.querySelector('#test');
-      } else if (i === 1) {
-        myImage = document.querySelector('#test2');
-      } else {
-        myImage = document.querySelector('#test3');
-      }
-
-      // myImage.src = objectURL;
-      myImage.src = urls[i];
-    }
+    // const response = await fetch(url, options);
+    // const result = await response.json();
+    // const objectURL = result.image;
+    // const objectURL = URL.createObjectURL(result.image);
+    // let myImage = document.querySelector('.draggable img');
+    // // myImage.src = objectURL;
+    // myImage.src = url;
   } catch (error) {
     console.error(error);
   }
-})();
-
-(async () => {
-  const request = new Request('./../scrape/images.txt');
-  const response = await fetch(request);
-  // console.log(await response.text());
 })();

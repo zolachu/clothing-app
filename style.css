@@ -416,12 +416,12 @@ body {
 }
 
 .draggable:active, .draggable:focus, .draggable.active {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
     z-index: 1000;
 }
 
 .draggable:hover:not(.active) {
-    border: 1px dashed var(--border-color);
+    /* border: 1px dashed var(--border-color); */
 }
 
 .draggable:hover {

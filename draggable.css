@@ -1,6 +1,6 @@
 .draggable {
     z-index: 9;
-    /* height: 300px; */
+    height: 100px;
     /* width: 50px; */
     position: fixed;
 }

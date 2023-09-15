@@ -17,7 +17,7 @@ body {
     position: relative;
     height: calc(100vh + var(--footer-height));
     width: 100%;
-    background-color: #000;
+    background-color: #746D6C;
     display: flex;
     justify-content: center;
 }
@@ -453,7 +453,7 @@ body {
 
 .draggable {
     z-index: 9;
-    height: 300px;
+    /* height: 300px; */
     /* width: 50px; */
     position: fixed;
 }
@@ -462,6 +462,7 @@ body {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    filter: drop-shadow(0 0 5px rgba(26, 251, 255, 0.8));
 }
 
 .resizer {
@@ -529,6 +530,14 @@ body {
 
 .visible .download-btn {
     display: block;
+}
+
+.clock {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 4000;
+    border: 0;
 }
 
 

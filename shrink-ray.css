@@ -2,16 +2,18 @@
     --tilt-degree: -10;
     --tilt-degree-2: 2* calc(90 - var(--tilt-degree));
     --tilt-degree-3: calc(90 - var(--tilt-degree));
+    --box-shadow: 0;
     height: 80vh;
     width: 30vw;
     position: fixed;
-    bottom: 0;
+    bottom: -20px;
     left: 100px;
-    transition: all 4s ease-in-out;
+    transition: all 10s ease-in-out;
 }
 
 .shrink-ray:hover {
-    --tilt-degree: -20;
+    --tilt-degree: -40;
+    --box-shadow: 0 0 30px #E0FBC2;
     /* --tilt-degree-2: 220; */
 }
 
@@ -124,6 +126,7 @@
     height: 100px;
     top: 25px;
     display: flex;
+    transition: all 4s ease-in-out;
 }
 
 .shrink-ray .stand-3 .top-circle {
@@ -401,7 +404,7 @@
 }
 
 .light-container .box {
-    box-shadow: 0 0 10px #E0FBC2;
+    box-shadow: var(--box-shadow);
 }
 
 @keyframes shrink-ray-animation {

@@ -1,35 +1,41 @@
-function addResizableToMomento(e, ui) {
-  let copyLastMoment = {};
-  if (momento.length > 0) {
-    let lastMoment = momento[momento.length - 1];
-    copyLastMoment = structuredClone(lastMoment);
-  }
+// function addResizableToMomento(e, ui) {
+//   let copyLastMoment = {};
+//   if (momento.length > 0) {
+//     let lastMoment = momento[momento.length - 1];
+//     copyLastMoment = structuredClone(lastMoment);
+//   }
 
-  for (let i in copyLastMoment.products) {
-    let product = copyLastMoment.products[i];
-    if (product.name === e.target.id) {
-      const ratio = ui.size.width / ui.size.height;
-      const size = [ratio, ui.size.height];
-      product.size = size;
-    }
-  }
-  console.log(copyLastMoment);
-  momento.push(copyLastMoment);
-  level++;
-}
-
-const el = document.querySelector('.draggable');
-const ne = document.querySelector('.ne');
-const img = document.querySelector('img');
-
-el.addEventListener('mousedown', mousedown);
-
-// if (getEventListeners(el).contains('mousedown')) {
-
+//   for (let i in copyLastMoment.products) {
+//     let product = copyLastMoment.products[i];
+//     if (product.name === e.target.id) {
+//       const ratio = ui.size.width / ui.size.height;
+//       const size = [ratio, ui.size.height];
+//       product.size = size;
+//     }
+//   }
+//   console.log(copyLastMoment);
+//   momento.push(copyLastMoment);
+//   level++;
 // }
-ne.addEventListener('mousedown', mousedownResize);
-function mousedown(e) {
-  console.log('nooo');
+
+const elList = document.querySelectorAll('.draggable');
+const neList = document.querySelectorAll('.ne');
+const img = document.querySelectorAll('img');
+
+[...elList].forEach((el) => {
+  el.addEventListener('mousedown', function (e) {
+    mousedown(e, this);
+  });
+});
+
+[...neList].forEach((ne) => {
+  ne.addEventListener('mousedown', function (e) {
+    mousedownResize(e, this);
+  });
+});
+
+function mousedown(e, el) {
+  console.log(el);
   e.preventDefault();
   prevX = e.clientX;
   prevY = e.clientY;
@@ -54,7 +60,8 @@ function mousedown(e) {
 }
 
 let currentResizer;
-function mousedownResize(e) {
+function mousedownResize(e, ne) {
+  let el = ne.parentElement.querySelector('img');
   e.preventDefault();
   prevX = e.clientX;
   prevY = e.clientY;

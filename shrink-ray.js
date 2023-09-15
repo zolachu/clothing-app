@@ -19,7 +19,6 @@ function bounce() {
   for (let i = 0; i < 4; i++) {
     setTimeout(() => {
       shrinkRayEl.style.setProperty('--ray-neon-color', 'rgba(0, 0, 0, 1)');
-      box.style.boxShadow = 0;
       boxes.forEach((box) => {
         box.style.boxShadow = 0;
       });

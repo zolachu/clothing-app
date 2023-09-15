@@ -1,0 +1,102 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.clock-container {
+    --tick-degree: 30;
+    z-index: 40000;
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background: #545D54;
+    border: 2px solid black;
+    border-radius: 50% 45% 53% 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.clock-inner-container {
+    border: 2px solid black;
+    border-radius: 48% 45% 50% 47%;
+    height: 85px;
+    width: 85px;
+    position: relative;
+    background-color: #E3F1DB;
+
+}
+
+.clock-inner-container .shadow-2 {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    height: 140px;
+    width: 140px;
+    background-color: rgba(255,255,255,0.2);
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.tick-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80px;
+    width: 80px;
+}
+
+.tick {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    transform: rotate(calc(var(--tick-degree) * 1deg));
+    font-size: 8px;
+}
+
+.needles {
+    --needle-degree: 0;
+    position: absolute;
+    background-color: red;
+}
+
+.needles .needles--needle {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%) rotate(calc(var(--needle-degree) * 1deg));
+    transform-origin: bottom center;
+
+    border: 1px solid black;
+}
+
+.needles__minute{
+    height: 30px;
+    width: 3px;
+    border-radius: 60% 30% 70% 30%;
+}
+
+.needles__hour {
+    height: 20px;
+    width: 3px;
+    border-radius: 50% 30% 70% 30%;
+}
+
+.needles__second {
+    height: 30px;
+    width: 3px;
+    border-radius: 50% 40% 55% 30%;
+}
+
+.needles__center {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border: 1.1px solid black;
+    border-radius: 50% 40% 55% 45%;
+    background-color: #E3F1DB;
+   transform: translate(-50%, -50%);
+}

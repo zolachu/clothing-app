@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.calendar-container {
+    --calendar-mountain-rotation: 0;
+    --mountain-top-width: 20;
+    --mountain-top-rotation: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 8px 9px 5px 2px;
+    background-color: #7B7F84;
+    height: 300px;
+    width: 130px;
+    padding: 5px;
+}
+
+.calendar-hanger {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    border: 2px solid black;
+    border-top: transparent;
+    border-left: transparent;
+    transform: rotate(135deg);
+}
+
+.calendar-hero {
+    margin-top: 8px;
+    border: 3px solid black;
+    background-color: #A8BCCB;
+    height: 100px;
+    width: 100px;
+    border-radius: 3px 2px 1px 7px;
+    transform: rotate(1deg);
+    overflow: hidden;
+}
+
+.calendar-container .mountain {
+
+    position: absolute;
+    border-radius: 4px;
+    border: 2px solid black;
+    background-color: #3E6851;
+    height: 100px;
+    width: 120px;
+    transform: rotate(calc(var(--calendar-mountain-rotation) * 1deg));
+}
+
+.calendar-container .mountain1 {
+    --calendar-mountain-rotation: 50;
+    top: 48px;
+    left: 16px;
+}
+
+.calendar-container .mountain2 {
+    --calendar-mountain-rotation: 40;
+    top: 38px;
+    left: -14px;
+    overflow: hidden;
+}
+
+.calendar-container .mountain-top {
+    /* border: 2px solid black; */
+    position: absolute;
+    background-color: #BFD3C4;
+    height: 70px;
+    width: calc(var(--mountain-top-width) * 1px);
+    transform: rotate(calc(var(--mountain-top-rotation) * 1deg));
+    top: -33px;
+    left: -6px;
+    /* transform-origin: center; */
+    border-radius: 50%;
+}
+
+.mountain-top1 {
+    --mountain-top-width: 20;
+    --mountain-top-rotation: 100;
+}
+
+.mountain-top2 {
+    --mountain-top-width: 20;
+    --mountain-top-rotation: 139;
+}

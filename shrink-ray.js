@@ -1,12 +1,13 @@
-const shrinkRayEl = document.querySelector('.shrink-ray *');
+const shrinkRayEl = document.querySelector('.shrink-ray');
+const bulbBody = document.querySelector('.bulb-body');
 
 console.log('here');
-shrinkRayEl.addEventListener('click', (e) => {
+bulbBody.addEventListener('click', (e) => {
   console.log(e.target);
   const deg = getComputedStyle(shrinkRayEl).getPropertyValue('--tilt-degree');
   console.log(deg);
   const deg2 = 20 - deg;
-  //   shrinkRayEl.style.setProperty('--tilt-degree', `${deg2}`);
+  shrinkRayEl.style.setProperty('--tilt-degree', `${deg2}`);
 });
 
 const boxes = document.querySelectorAll('.light-container .box');

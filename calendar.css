@@ -5,18 +5,19 @@
 }
 
 .calendar-container {
+    position: relative;
     --calendar-mountain-rotation: 0;
     --mountain-top-width: 20;
     --mountain-top-rotation: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 8px 9px 5px 2px;
     background-color: #7B7F84;
-    height: 300px;
+    height: 240px;
     width: 130px;
-    padding: 5px;
+    padding: 4px 10px;
 }
 
 .calendar-hanger {
@@ -30,13 +31,13 @@
 }
 
 .calendar-hero {
-    margin-top: 8px;
-    border: 3px solid black;
+    margin-top: 4px;
+    border: 2px solid black;
     background-color: #A8BCCB;
     height: 100px;
-    width: 100px;
+    width: 100%;
     border-radius: 3px 2px 1px 7px;
-    transform: rotate(1deg);
+    transform: rotate(0.3deg);
     overflow: hidden;
 }
 
@@ -85,4 +86,33 @@
 .mountain-top2 {
     --mountain-top-width: 20;
     --mountain-top-rotation: 139;
+}
+
+.calendar-body {
+    margin-top: 10px;
+    height: 45%;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1.5px;
+}
+
+.calendar-cell {
+    background-color: #A1ACB0;
+}
+
+.calendar-footer {
+    z-index: -1;
+    top: 98%;
+    position: absolute;
+    background-color: #7B7F84;
+    height: 15px;
+    width: 125px;
+    border: 2px solid black;
+    border-radius: 4px;
+    transform: rotate(1deg);
 }

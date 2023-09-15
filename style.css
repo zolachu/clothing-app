@@ -519,6 +519,8 @@ body {
 
 iframe {
     border: 0;
+    position: fixed;
+    z-index: 3100;
 }
 
 .clock {
@@ -535,6 +537,11 @@ iframe {
     height: 200px;
     width: 200px;
     transform: scale(0.4);
+}
+
+.calendar {
+    left: 150px;
+    top: 30px;
 }
 
 

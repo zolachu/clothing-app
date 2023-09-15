@@ -10,6 +10,7 @@
     bottom: -20px;
     left: 100px;
     transition: all 10s ease-in-out;
+    z-index: 4000;
 }
 
 .shrink-ray:hover {
@@ -114,7 +115,7 @@
     border-radius: 0 0 2px 2px;
     width: 10px;
     height: 10vh;
-    bottom: -2px;
+    bottom: 0px;
     left: 50%;
     transform: translate(-50%, 100%);
     border: 2px solid black;

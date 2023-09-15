@@ -405,16 +405,13 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* .draggable {
-    height: 300px;
-    width: auto;
-    min-height: 30px;
+.draggable {
     border: 1px solid transparent;
     border-radius: 5px;
     background-color: transparent !important;
-    position: absolute;
-    z-index: 10;
-    cursor: grab;
+    /* position: absolute;
+    z-index: 10; */
+    /* cursor: grab; */
     transition: border 0.1s;
 }
 
@@ -435,26 +432,14 @@ body {
     opacity: 0;
 }
 
-.draggable .ui-icon {
-    background: var(--border-color);
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    padding: 5px;
-    opacity: 1;
-    transform: translate(50%, 50%);
-    cursor: nwse-resize;
-}
-
 .draggable img {
     height: 100%;
     pointer-events: none;
-} */
+}
 
+/* 
 .draggable {
     z-index: 9;
-    /* height: 300px; */
-    /* width: 50px; */
     position: fixed;
 }
 
@@ -504,7 +489,7 @@ body {
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 8px;
-}
+} */
 
 .ui-widget-content {
     /* height: inherit;

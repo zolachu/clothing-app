@@ -1,0 +1,54 @@
+.draggable {
+    z-index: 9;
+    /* height: 300px; */
+    /* width: 50px; */
+    position: fixed;
+}
+
+.draggable img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 5px rgba(26, 251, 255, 0.8));
+}
+
+.resizer {
+    position: absolute;
+    z-index: 11;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.ne {
+    bottom: -10px;
+    right: -10px;
+    position: absolute;
+}
+
+.ne::before {
+    content: '^';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 8px;
+}
+
+.sw {
+    top: -10px;
+    left: -10px;
+    position: absolute;
+}
+
+.sw::before {
+    content: 'x';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 8px;
+}

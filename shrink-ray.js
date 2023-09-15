@@ -10,17 +10,26 @@ shrinkRayEl.addEventListener('click', (e) => {
 });
 
 const boxes = document.querySelectorAll('.light-container .box');
-setInterval(bounce, 10000);
+setInterval(bounce, 5000);
 
+const neonColor = window
+  .getComputedStyle(shrinkRayEl)
+  .getPropertyValue('--ray-neon-color');
 function bounce() {
-  boxes.forEach((box) => {
-    for (let i = 0; i < 4; i++) {
-      setTimeout(() => {
-        box.style.boxShadow = '0 0 30px #E0FBC2';
-      }, 500);
-      setTimeout(() => {
+  for (let i = 0; i < 4; i++) {
+    setTimeout(() => {
+      shrinkRayEl.style.setProperty('--ray-neon-color', 'rgba(0, 0, 0, 1)');
+      box.style.boxShadow = 0;
+      boxes.forEach((box) => {
         box.style.boxShadow = 0;
-      }, 500);
-    }
-  });
+      });
+    }, 80 * i);
+    setTimeout(() => {
+      shrinkRayEl.style.setProperty('--ray-neon-color', neonColor);
+
+      boxes.forEach((box) => {
+        box.style.boxShadow = '0 0 30px var(--ray-neon-color)';
+      });
+    }, 100 * i);
+  }
 }
